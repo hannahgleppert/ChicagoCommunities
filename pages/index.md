@@ -1,5 +1,6 @@
 ---
-title: San Francisco 311 Cases
+title: Chicago Community Explorer
+description: A dashboard to explore the communities of Chicago
 ---
 
 <!-- SECTION 1: BUILD A BASIC SUMMARY PAGE -->
