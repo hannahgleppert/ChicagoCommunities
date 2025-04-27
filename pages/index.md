@@ -1,20 +1,28 @@
 ---
-title: Chicago Community Explorer
-description: A dashboard to explore the communities of Chicago
+title: Chicago Community Inisights
 ---
+This is an app that allows you to interact with the City of Chicago's data. The database visualized by this app includes Zillow's, crime statistics, and education data. 
 
-<!-- SECTION 1: BUILD A BASIC SUMMARY PAGE -->
+<!-- ```sql description
+-- select <!communities count> 
+-- from <!> 
 
-<!-- 1. Add your first query
-    - Name it 'description'
-    - Calculate min_date, max_date, and case count from the sf311.cases table
--->
 
-<!-- 2. Add a Details component to explain the dataset
-    - Use the Value component to display the min date, max date, and record count in the Details componet
-    - Add a nested Details component inside to display this explanation of 311 cases:
-          311 is the city's request service for non-emergencies. Citizens can report local issues to 311 and monitor the status of the request. Each case represents something that was reported through this service.
---> 
+-- <Details title='About this data'>
+--   This dataset includes <Value data={description} column=count fmt=num0k/> Communities in Chicago from <Value data={description}/>.
+
+--   <Details title='Zillow'>
+    -- Informtation aout Zillow's data.
+--   </Details>
+--   <Details title='Crime>
+    -- Informtation aout crime data.
+--   </Details>
+  --   <Details title='Education>
+    -- Informtation aout education data.
+--   </Details>
+
+-- </Details>
+-
 
 <!-- 3. Add summary BigValues
     - Add a query called 'summary' to get total_cases and open_cases (where status='Open')
