@@ -1,4 +1,4 @@
-# SF 311 Data App Template
+# Chicago Community Insight Database
 
 This is a template repo for building an interactive data app with [Evidence](https://evidence.dev) using SF 311 data. This project is part of a workshop at [Small Data SF 2024](https://www.smalldatasf.com/2024/).
 
