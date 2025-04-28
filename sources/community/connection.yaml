@@ -1,0 +1,5 @@
+# This file was automatically generated
+name: communitydb
+type: duckdb
+options:
+  filename: communitydb.duckdb
