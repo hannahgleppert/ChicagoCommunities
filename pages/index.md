@@ -13,7 +13,7 @@ from community.housing
 <AreaMap
     data={communities}
     geoJsonUrl="/chicago.geojson"
-    geoID=community_id
+    geoId=community_id
     areaCol=CommunityNo
     value=FamilyUnits 
 />
