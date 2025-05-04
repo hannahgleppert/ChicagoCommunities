@@ -1,2 +1,1 @@
-SELECT * 
-FROM housing_data
+select * from housing_data
