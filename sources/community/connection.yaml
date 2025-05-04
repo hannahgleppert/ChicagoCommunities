@@ -1,5 +1,5 @@
 # This file was automatically generated
-name: communitydb
-type: duckdb
+name: community
+type: csv
 options:
-  filename: communitydb.duckdb
+  options: header=true

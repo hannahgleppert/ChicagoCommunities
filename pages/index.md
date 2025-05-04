@@ -5,11 +5,11 @@ This is an app that allows you to interact with the City of Chicago's data. The 
 
 ```sql description
 select count(*) as count 
-from ChicagoCommunityInsightsDB.community_areas
+from community.housing
 ```
 
 <Details title='About this data'>
-This dataset includes <Value data={description} column=count fmt=num0k/> Communities in Chicago from <Value data={description}/>.
+This dataset includes information about <Value data={description} column=count/> communities in Chicago.
 
     <Details title='Zillow'>
      Information about Zillow's data.
