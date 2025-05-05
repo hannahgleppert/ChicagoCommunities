@@ -1,3 +1,4 @@
+
 ---
 title: Chicago Community Insights
 ---
@@ -5,24 +6,23 @@ This is an app that allows you to interact with the City of Chicago's data. The 
 
 
 ```sql communities
-select CommunityArea, CommunityNo, FamilyUnits 
-from community.housing
+SELECT CommunityArea, CommunityNo, FamilyUnits
+FROM community.housing_data
 ```
 
 
 <AreaMap
-    data={communities}
-    geoJsonUrl="/chicago.geojson"
-    geoId=community_id
-    areaCol=CommunityNo
-    value=FamilyUnits 
+  data={communities}
+  geoJsonUrl="/static/chicago.geojson"
+  geoId=area_num_1
+  areaCol=CommunityNo
+  value=FamilyUnits
 />
-
 
 
 ```sql description
 select count(*) as count 
-from community.housing
+from community.housing_data
 ```
 
 <Details title='About this data'>
@@ -39,4 +39,3 @@ This dataset includes information about <Value data={description} column=count/>
     </Details>
 
  </Details>
-

@@ -1,1 +1,0 @@
-select * from school_information
