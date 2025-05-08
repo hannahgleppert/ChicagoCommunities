@@ -1,3 +1,4 @@
+-- Active: 1746398518028@@frontier.cs.lewisu.edu@3306
 ---
 title: Chicago Community Insights
 ---
@@ -5,8 +6,36 @@ This is an app that allows you to interact with the City of Chicago's data. The 
 
 
 ```sql communities
-select CommunityArea, CommunityNo, FamilyUnits 
-from community.housing
+SELECT CommunityArea, CommunityNo, FamilyUnits
+FROM community.housing_data
 ```
 
 
+<AreaMap
+  data={communities}
+  geoJsonUrl="/static/chicago.geojson"
+  geoId=area_num_1
+  areaCol=CommunityNo
+  value=FamilyUnits
+/>
+
+
+```sql description
+select count(*) as count 
+from community.housing_data
+```
+
+<Details title='About this data'>
+This dataset includes information about <Value data={description} column=count/> communities in Chicago.
+
+    <Details title='Zillow'>
+     Information about Zillow's data.
+    </Details>
+    <Details title='Crime'>
+    Information about crime data.
+    </Details>
+     <Details title='Education'>
+     Information about education data.
+    </Details>
+
+ </Details>
