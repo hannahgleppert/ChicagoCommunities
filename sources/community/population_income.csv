@@ -1,4 +1,4 @@
-"ZipCode","City","Population","Growth","Age","Income_per_household","Income per household"
+"ZipCode","City","Population","Growth","Age","blank","Income per household"
 "60629",Chicago IL,105209,-8%,28.8,,"$40,279.00 "
 "60618",Chicago IL,81196,-13%,32.5,,"$41,355.00 "
 "60617",Chicago IL,76284,-10%,35.4,,"$35,534.00 "
