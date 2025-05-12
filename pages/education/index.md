@@ -66,13 +66,13 @@ order by order_col
 </Grid>
 
 ```sql schools_zip
-select LPAD(CAST("Zip" AS TEXT), 5, '0') AS ZIP, 'Pre-School' as School_Type, count(Is_Pre_School) as count from school_information group by ZIP
+select LPAD(CAST("Zip" AS TEXT), 5, '0') AS ZIP, 'Pre-School' as School_Type, COUNT(*) FILTER (WHERE Is_Pre_School = true) AS count from school_information group by ZIP
 union all
-select LPAD(CAST("Zip" AS TEXT), 5, '0') AS ZIP, 'Elementary School', count(Is_Elementary_School) from school_information group by ZIP
+select LPAD(CAST("Zip" AS TEXT), 5, '0') AS ZIP, 'Elementary School', COUNT(*) FILTER (WHERE Is_Elementary_School = true) from school_information group by ZIP
 union all
-select LPAD(CAST("Zip" AS TEXT), 5, '0') AS ZIP, 'Middle School', count(Is_Middle_School) from school_information group by ZIP
+select LPAD(CAST("Zip" AS TEXT), 5, '0') AS ZIP, 'Middle School', COUNT(*) FILTER (WHERE Is_Middle_School = true) from school_information group by ZIP
 union all
-select LPAD(CAST("Zip" AS TEXT), 5, '0') AS ZIP, 'High School', count(Is_High_School) from school_information group by ZIP
+select LPAD(CAST("Zip" AS TEXT), 5, '0') AS ZIP, 'High School', COUNT(*) FILTER (WHERE Is_High_School = true) from school_information group by ZIP
 order by ZIP
 ```
 
@@ -82,7 +82,6 @@ order by ZIP
     x=ZIP
     y=count
     title="Chicago Schools"
-    labels
     yGridlines=false
     yAxisLabels=false
     yAxisTitle=true

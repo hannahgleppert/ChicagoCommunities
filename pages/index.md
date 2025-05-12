@@ -1,7 +1,7 @@
 ---
-title: Chicago Community Insights
+title: Chicago Insights Dashboard
 ---
-This is an app that allows you to interact with the City of Chicago's data. The database visualized by this app includes Zillow's, crime statistics, and education data. 
+This dashboard allows you to interact with the City of Chicago's data. The database visualized by this app includes Zillow's, crime statistics, and education data. 
 
 
 ```sql housing
