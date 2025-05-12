@@ -37,6 +37,8 @@ WHERE ZIP = '${params.schools}'
     defaultValue=""
 />
 
+### School Demographics
+
 ```sql schools_demographics
 SELECT 'African American' AS Ethnicity, Student_Count_Black AS count FROM school_information WHERE Long_Name = '${inputs.school_name.value}'
 UNION ALL
