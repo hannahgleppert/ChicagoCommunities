@@ -21,7 +21,7 @@ select
   "Population" as Population,
   "Growth" as Growth,
   "Age" as Average_Age,
-  "Income per household" as Income,
+  "Income per household" as Income_per_household,
 from
   community.population_income
 group by all;
