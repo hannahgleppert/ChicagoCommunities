@@ -1,24 +1,31 @@
 # {params.schools}
 
 ```sql school_locations
-select * from school_information
-where ZIP = '${params.schools}'
+SELECT *,
+  CASE Primary_Category
+    WHEN 'Early Childhood' THEN 1
+    WHEN 'ES' THEN 2
+    WHEN 'MS' THEN 3
+    WHEN 'HS' THEN 4
+    ELSE 0
+  END AS Primary_Category_Value
+FROM school_information
+WHERE ZIP = '${params.schools}'
 ```
-
 
 <PointMap
         title="School Locations"
         data={school_locations}
         lat='School_Latitude'
         long='School_Longitude'
-        startingZoom=13
+        startingZoom=12
         name=my_point_map
+        value=Primary_Category_Value        
         tooltipType=click
         tooltip={[
             {id: 'Long_Name', showColumnName: false, valueClass: 'font-bold text-lg'},
             {id: 'Primary_Category'},
-            {id: 'Grades_Offered', showColumnName: true},
-            {id: 'School_ID'}
+            {id: 'Grades_Offered_All', showColumnName: true},
         ]}
     />
 
