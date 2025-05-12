@@ -1,40 +1,15 @@
 ---
 title: Education
 ---
-```sql schools_zip
-select LPAD(CAST("Zip" AS TEXT), 5, '0') AS ZIP, 'Pre-School' as School_Type, count(Is_Pre_School) as count from school_information group by ZIP
-union all
-select LPAD(CAST("Zip" AS TEXT), 5, '0') AS ZIP, 'Elementary School', count(Is_Elementary_School) from school_information group by ZIP
-union all
-select LPAD(CAST("Zip" AS TEXT), 5, '0') AS ZIP, 'Middle School', count(Is_Middle_School) from school_information group by ZIP
-union all
-select LPAD(CAST("Zip" AS TEXT), 5, '0') AS ZIP, 'High School', count(Is_High_School) from school_information group by ZIP
-order by ZIP
-```
 
-
-<BarChart
-    data={schools_zip}
-    x=ZIP
-    y=count
-    title="Counts of Schools by ZIP Code"
-    labels
-    yGridlines=false
-    yAxisLabels=false
-    yAxisTitle=true
-    swapXY=true
-    legend
-    seriesOrder = {['Pre-School', 'Elementary School', 'Middle School', 'High School']}
-    series=School_Type
-/>
 
 ##### School Explorer
 
 {#if inputs.map_input.ZIP === true}
-    # All ZIP Codes
+    # Chicago
 {:else}
     # {inputs.map_input.ZIP}
-    [See neighborhood deep dive &rarr;](./{inputs.map_input.ZIP})
+    [See ZIP code deep dive &rarr;](./{inputs.map_input.ZIP})
 
 {/if}
 
@@ -59,7 +34,6 @@ order by order_col
 <Grid cols=2>
     <Group>
 
-        ### ZIP Code Selector
 
         <AreaMap
             data={schools}
@@ -91,7 +65,32 @@ order by order_col
     </Group>
 </Grid>
 
+```sql schools_zip
+select LPAD(CAST("Zip" AS TEXT), 5, '0') AS ZIP, 'Pre-School' as School_Type, count(Is_Pre_School) as count from school_information group by ZIP
+union all
+select LPAD(CAST("Zip" AS TEXT), 5, '0') AS ZIP, 'Elementary School', count(Is_Elementary_School) from school_information group by ZIP
+union all
+select LPAD(CAST("Zip" AS TEXT), 5, '0') AS ZIP, 'Middle School', count(Is_Middle_School) from school_information group by ZIP
+union all
+select LPAD(CAST("Zip" AS TEXT), 5, '0') AS ZIP, 'High School', count(Is_High_School) from school_information group by ZIP
+order by ZIP
+```
 
+
+<BarChart
+    data={schools_zip}
+    x=ZIP
+    y=count
+    title="Chicago Schools"
+    labels
+    yGridlines=false
+    yAxisLabels=false
+    yAxisTitle=true
+    swapXY=true
+    legend
+    seriesOrder = {['Pre-School', 'Elementary School', 'Middle School', 'High School']}
+    series=School_Type
+/>
 
 ## ZIP Code List
 
