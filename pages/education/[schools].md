@@ -57,6 +57,7 @@ UNION ALL
 SELECT 'Hawaiian Pacific Islander', Student_Count_Hawaiian_Pacific_Islander FROM school_information WHERE Long_Name = '${inputs.school_name.value}'
 UNION ALL
 SELECT 'Ethnicity Not Available', Student_Count_Ethnicity_Not_Available FROM school_information WHERE Long_Name = '${inputs.school_name.value}'
+order by Ethnicity
 ```
 
     <BarChart
