@@ -9,7 +9,7 @@ union all
 select LPAD(CAST("Zip" AS TEXT), 5, '0') AS ZIP, 'Middle School', count(Is_Middle_School) from school_information group by ZIP
 union all
 select LPAD(CAST("Zip" AS TEXT), 5, '0') AS ZIP, 'High School', count(Is_High_School) from school_information group by ZIP
-order by School_Type
+order by ZIP
 ```
 
 
@@ -30,7 +30,7 @@ order by School_Type
 
 ##### School Explorer
 
-{#if inputs.map_input.ZIP == 'true'}
+{#if inputs.map_input.ZIP === true}
     # All ZIP Codes
 {:else}
     # {inputs.map_input.ZIP}
@@ -59,7 +59,7 @@ order by order_col
 <Grid cols=2>
     <Group>
 
-        ### Neighborhood Selector
+        ### ZIP Code Selector
 
         <AreaMap
             data={schools}
@@ -90,3 +90,12 @@ order by order_col
 
     </Group>
 </Grid>
+
+
+
+## ZIP Code List
+
+<DataTable data={schools} link=ZIP>
+    <Column id=ZIP/>
+    <Column id=schools contentType=colorscale/>
+</DataTable>
