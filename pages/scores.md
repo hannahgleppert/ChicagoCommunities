@@ -8,8 +8,8 @@ WHERE ZipCode IS NOT NULL;
 <AreaMap
    data={zipScores}
    geoJsonUrl="/Cook_County_Zip_Code.geojson"
-   geoId="ZIP"
-   areaCol="ZIP"
-   value="Rank"
-   name="neighborhood_score_map"
+   geoId=zip
+   areaCol=ZIP
+   value=Rank
+   name=neighborhood_score_map
 />
