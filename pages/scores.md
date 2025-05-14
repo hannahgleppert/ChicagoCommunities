@@ -1,6 +1,6 @@
  ```sql zipScores
 SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "Rank"
-FROM neighborhood_scores
+FROM neighborhood_scores_full
 WHERE ZipCode IS NOT NULL;
 ```
 
@@ -25,5 +25,5 @@ WHERE ZipCode IS NOT NULL;
    geoId=zip
    areaCol=ZIP
    value=ViolentCrimes
-   name=neighborhood_score_map
+   name=violent_crimes
 />
