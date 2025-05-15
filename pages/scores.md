@@ -1,6 +1,6 @@
  ```sql zipScores
 SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "Rank"
-FROM neighborhood_scores_final
+FROM zip_scores
 WHERE ZipCode IS NOT NULL;
 ```
 
@@ -14,8 +14,8 @@ WHERE ZipCode IS NOT NULL;
 />
 
  ```sql violentCrimes
-SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "DrugCrimes"
-FROM neighborhood_scores_final
+SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "ViolentCrimes"
+FROM zip_scores
 WHERE ZipCode IS NOT NULL;
 ```
 
@@ -24,6 +24,6 @@ WHERE ZipCode IS NOT NULL;
    geoJsonUrl="/Cook_County_Zip_Code.geojson"
    geoId=zip
    areaCol=ZIP
-   value=DrugCrimes
+   value=ViolentCrimes
    name=violent_crimes
 />
