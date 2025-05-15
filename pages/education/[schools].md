@@ -121,3 +121,4 @@ WHERE Long_Name = '${inputs.school_name.value}'
     <Column id=Attainment_SAT_Grade_11_School_Pct title="Attainment SAT Grade 11 School (%)" fmt=id/>
     <Column id=Attainment_All_Grades_School_Pct title="Attainment All Grades School (%)" fmt=id/>
 </DataTable>
+
