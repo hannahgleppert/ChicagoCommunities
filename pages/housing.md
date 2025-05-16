@@ -11,6 +11,7 @@ WHERE ZipCode IS NOT NULL;
    areaCol=ZIP
    value="IncomeScore"
    name=IncomeScore
+   title = "Income Score"
 />
 
  ```sql foreclosureRate
@@ -25,5 +26,5 @@ WHERE ZipCode IS NOT NULL;
    geoId=zip
    areaCol=ZIP
    value="Foreclosure Rate per 10,000 People"
-   name=Foreclosure Rate per 10,000 People
+   title="Foreclosure Rate per 10,000 People"
 />
