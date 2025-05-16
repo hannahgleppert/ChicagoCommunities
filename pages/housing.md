@@ -14,6 +14,11 @@ WHERE ZipCode IS NOT NULL;
    title = "Income Score"
 />
 
+<Details title='Scoring System'>
+   Scoring System Methodology
+   
+ </Details>
+
  ```sql foreclosureRate
 SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "Foreclosure_rate" AS "Foreclosure Rate per 10,000 People"
 FROM zip_scores
