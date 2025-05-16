@@ -1,6 +1,6 @@
  ```sql zipScores
 SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "Rank"
-FROM zip_scores
+FROM zip_scores_full
 WHERE ZipCode IS NOT NULL;
 ```
 

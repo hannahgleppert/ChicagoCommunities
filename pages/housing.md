@@ -1,6 +1,6 @@
  ```sql incomeScore
 SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "IncomeScore"
-FROM zip_scores
+FROM zip_scores_full
 WHERE ZipCode IS NOT NULL;
 ```
 
@@ -25,7 +25,7 @@ WHERE ZipCode IS NOT NULL;
 
  ```sql foreclosureRate
 SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "Foreclosure_rate" AS "Foreclosure Rate per 10,000 People"
-FROM zip_scores
+FROM zip_scores_full
 WHERE ZipCode IS NOT NULL;
 ```
 

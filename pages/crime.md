@@ -4,7 +4,7 @@ title: Crime
  
  ```sql violentCrimes
 SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "ViolentCrimes" AS "Violent Crimes since 2001"
-FROM zip_scores
+FROM zip_scores_full
 WHERE ZipCode IS NOT NULL;
 ```
 
@@ -19,7 +19,7 @@ WHERE ZipCode IS NOT NULL;
 
  ```sql drugCrimes
 SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "ViolentCrimes" AS "Drug Crimes since 2001"
-FROM zip_scores
+FROM zip_scores_full
 WHERE ZipCode IS NOT NULL;
 ```
 
@@ -34,7 +34,7 @@ WHERE ZipCode IS NOT NULL;
 
  ```sql propertyCrimes
 SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "PropertyCrimes" AS "Property Crimes since 2001"
-FROM zip_scores
+FROM zip_scores_full
 WHERE ZipCode IS NOT NULL;
 ```
 
@@ -49,7 +49,7 @@ WHERE ZipCode IS NOT NULL;
 
  ```sql otherCrimes
 SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "Other" AS "Other Crimes since 2001"
-FROM zip_scores
+FROM zip_scores_full
 WHERE ZipCode IS NOT NULL;
 ```
 
