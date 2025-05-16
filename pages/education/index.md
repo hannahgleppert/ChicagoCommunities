@@ -58,7 +58,7 @@ order by order_col
     legend=true
     xAxisLabels=false
     xAxisLabelRotation=0
-    chartAreaHeight=280
+    chartAreaHeight=260
     seriesOrder = {['Pre-School', 'Elementary School', 'Middle School', 'High School']}
     />
 
@@ -110,7 +110,7 @@ WHERE ZipCode IS NOT NULL;
    geoId=zip
    areaCol=ZIP
    value="Median Graduation Rate of High Schools"
-   name="Median Graduation Rate of High Schools"
+   title="Median Graduation Rate of High Schools"
 />
 
  ```sql medEnrollment
@@ -125,5 +125,5 @@ WHERE ZipCode IS NOT NULL;
    geoId=zip
    areaCol=ZIP
    value="Median Enrollment in Colleges" 
-   name="Median Enrollment in Colleges" 
+   title="Median Enrollment in Colleges" 
 />
