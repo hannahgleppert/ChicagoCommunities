@@ -57,7 +57,6 @@ union all
 select "CommunityNo" as CommunityNo, "Geography" as community, 'Building with 5+ Units' as label, BUILDING_5PLUS as value from community_housing_stats where CommunityNo = '${inputs.map_input.CommunityNo}'
 order by label
 ```
-## Community Details
 
 {#if inputs.map_input.CommunityNo === true}
   ### Select community above to see more details
@@ -245,8 +244,6 @@ select
   "Mortgage_2023" as mortgages
 from community_housing_stats
 ```
-
-## Community Housing Metrics over Time
 <Dropdown name=Housing_Metric
 title="Select a Category">
   <DropdownOption valueLabel= "Foreclosures" value= "foreclosures" />
@@ -256,6 +253,7 @@ title="Select a Category">
 
 <LineChart
   data={housing_by_year}
+  title="Community Housing Metrics over Time"
   x=year
   y={inputs.Housing_Metric.value}
   series=community
