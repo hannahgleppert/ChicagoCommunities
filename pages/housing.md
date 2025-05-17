@@ -27,10 +27,7 @@ order by CommunityNo
     ]}
 />
 
-<Details title='Scoring System'>
-  Scoring System Methodology:
-  To create the Income Score used in the Community Score calculation, we categorized homeowner income levels into four brackets: under $25,000, between $25,000 and $50,000, between $50,000 and $100,000, and over $100,000. Each bracket was assigned a weight reflecting its relative contribution to neighborhood socioeconomic advantage, with weights of 1, 3, 5, and 6 respectively. These weights were then applied to the percentage of homeowners in each ZIP code falling into each income category. By applying the weighted percentages, we generated a single Income Score for each neighborhood, with higher scores representing a greater concentration of higher-income households.
-</Details>
+
 
 ```sql housing_by_year
 select
