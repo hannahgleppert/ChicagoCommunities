@@ -62,7 +62,7 @@ WHERE ZipCode IS NOT NULL;
   title="Overall Scores"
   tooltip={[
             {id: 'Rank', title: 'Rank', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
-            {id: 'NeighborhoodScore', title: 'Neighborhood Scores', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
+            {id: 'NeighborhoodScore', title: 'Community Scores', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
             ]}
 />
 

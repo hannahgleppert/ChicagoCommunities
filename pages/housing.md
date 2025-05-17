@@ -2,11 +2,14 @@
 title: Housing
 ---
 
+
 ```sql community_housing
 select
   "CommunityNo" as CommunityNo,
   "Geography" as Community,
   "Total_Population" as Population,
+  "population_below_poverty_level" as population_below_poverty_level,
+  "Total_Households" as Total_Households
 from
   community_housing_stats
 group by all;
@@ -20,14 +23,100 @@ order by CommunityNo
   areaCol=CommunityNo
   value=Population
   name=map_input
-  title = "Community Populations"
+  title = "Communities of Chicago"
   tooltip={[
     {id: 'Community', fmt: 'id', showColumnName: false, valueClass: 'text-xl font-semibold'},
     {id: 'Population', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
+    {id: 'Total_Households', title: 'Total Households', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
+    {id: 'population_below_poverty_level', title: 'Population Below the Poverty Line', fmt: 'pct', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
     ]}
 />
 
+```sql cost_burden
+select "CommunityNo" as CommunityNo, "Geography" as community, 'Owner-Occupied' as label, OWNER_OCCUPIED_COST_BURDENED as value from community_housing_stats where CommunityNo = '${inputs.map_input.CommunityNo}'
+union all
+select "CommunityNo" as CommunityNo, "Geography" as community, 'Renter-Occupied' as label, RENTER_OCCUPIED_COST_BURDENED as value from community_housing_stats where CommunityNo = '${inputs.map_input.CommunityNo}'
+union all
+select "CommunityNo" as CommunityNo, "Geography" as community, 'All' as label, ALL_COST_BURDENED as value from community_housing_stats where CommunityNo = '${inputs.map_input.CommunityNo}'
+order by label
+```
 
+```sql tenure
+select "CommunityNo" as CommunityNo, "Geography" as community,'Owner-Occupied' as label, OWNER_OCCUPIED as value from community_housing_stats where CommunityNo = '${inputs.map_input.CommunityNo}'
+union all
+select "CommunityNo" as CommunityNo, "Geography" as community, 'Renter-Occupied' as label, RENTER_OCCUPIED as value from community_housing_stats where CommunityNo = '${inputs.map_input.CommunityNo}'
+order by label
+```
+```sql property_type
+select "CommunityNo" as CommunityNo, "Geography" as community, 'Single Family' as label, SINGLE_FAMILY as value from community_housing_stats where CommunityNo = '${inputs.map_input.CommunityNo}'
+union all
+select "CommunityNo" as CommunityNo, "Geography" as community, 'Condominium' as label, CONDOMINIUM as value from community_housing_stats where CommunityNo = '${inputs.map_input.CommunityNo}'
+union all
+select  "CommunityNo" as CommunityNo, "Geography" as community,'Building with 2-4 Units' as label, BUILDING_2TO4 as value from community_housing_stats where CommunityNo = '${inputs.map_input.CommunityNo}'
+union all
+select "CommunityNo" as CommunityNo, "Geography" as community, 'Building with 5+ Units' as label, BUILDING_5PLUS as value from community_housing_stats where CommunityNo = '${inputs.map_input.CommunityNo}'
+order by label
+```
+## Community Details
+
+{#if inputs.map_input.CommunityNo === true}
+  ### Select community above to see more details
+{:else}
+  ### {cost_burden[0].community}
+  
+{/if}
+
+<Grid cols=3>
+    <Group>
+
+      <BarChart
+      data={cost_burden}
+      title='Cost Burdened'
+      subtitle='Share of Households'
+      x=label
+      y=value
+      labels=true
+      xAxisLabels=false
+      yGridlines=false
+      yAxisLabels=false
+      yMin=0
+      yFmt=pct
+      series=label
+      />
+    </Group>
+    <Group>
+      <BarChart
+      data={tenure}
+      title='Resident Tenure'
+      subtitle='Share of Households'
+      x=label
+      y=value
+      labels=true
+      xAxisLabels=false
+      yGridlines=false
+      yAxisLabels=false
+      yMin=0
+      yFmt=pct
+      series=label
+      />
+    </Group>
+    <Group>
+      <BarChart
+      data={property_type}
+      title='Household by Property Type'
+      subtitle='Housing Units'
+      x=label
+      xAxisLabels=false
+      y=value
+      labels=true
+      yGridlines=false
+      yAxisLabels=false
+      yMin=0
+      yFmt=pct
+      series=label
+      />
+    </Group>
+</Grid>
 
 ```sql housing_by_year
 select

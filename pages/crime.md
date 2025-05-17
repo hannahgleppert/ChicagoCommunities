@@ -20,7 +20,10 @@ order by crimes DESC
    areaCol=ZIP
    value=crimes
    name=map_input
-        />
+   tooltip={[
+            {id: 'ZIP', showColumnName: false, valueClass: 'font-bold text-lg'},
+            {id: 'crimes', title: 'Total Number of Crimes', valueClass: 'font-bold text-md'},
+            ]}        />
 
 ```sql crime_locations
 SELECT LPAD(CAST("zip_code" AS TEXT), 5, '0') AS ZIP, *,
@@ -37,7 +40,7 @@ GROUP BY "Primary Type"
 ```
 
 {#if inputs.map_input.ZIP === true}
-    # Chicago
+    # Select region above to see more details
 {:else}
     # {inputs.map_input.ZIP}
 
