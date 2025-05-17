@@ -147,3 +147,8 @@ WHERE ZipCode IS NOT NULL;
 
     </Group>
 </Grid>
+
+<Details title='Scoring System'>
+  Scoring System Methodology:
+  The Community Scores for each neighborhood were calculated using a weighted combination of eight variables spanning education, housing, and crime. Each variable was assigned a specific weight based on its perceived impact on overall neighborhood quality. Positive weights were given to favorable indicators, including median college enrollment (0.20), median high school graduation rate (0.20), and the Income Score (0.20), which account for educational attainment and quality of housing. Conversely, negative weights were applied to less desirable factors such as foreclosure rate (-0.20), drug-related crimes (-0.10), other crimes (-0.03), property crimes (-0.12), and violent crime (-0.35), with violent crime receiving the highest negative weight due to its significant impact on safety and livability. By summing the weighted values for each ZIP code, we produced a single Community Score that enables neighborhood-to-neighborhood comparisons. households.
+</Details>
