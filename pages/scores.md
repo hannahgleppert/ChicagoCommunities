@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ```sql zipscores_overall
 SELECT 
   LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, 
@@ -34,6 +35,11 @@ select
   "Income_>100K",
   "Population",
 FROM zip_scores
+=======
+ ```sql zipScores
+SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "Rank"
+FROM zip_scores_full
+>>>>>>> refs/remotes/origin/main
 WHERE ZipCode IS NOT NULL;
 ```
 
