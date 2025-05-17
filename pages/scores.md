@@ -87,7 +87,7 @@ WHERE ZipCode IS NOT NULL;
           geoJsonUrl="/Cook_County_Zip_Code.geojson"
           geoId=zip
           areaCol=ZIP
-          value=DrugCrimes
+          value=ViolentCrimes
           title="Crime Scores"
           tooltip={[
             {id: 'DrugCrimes', title: 'Drug Crimes since 2001', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
@@ -98,7 +98,7 @@ WHERE ZipCode IS NOT NULL;
           ]}
         />
 
-    ###### Colors represent Drug Crimes values.
+    ###### Colors represent Violent Crime values.
     </Group>
     <Group>
 
@@ -145,7 +145,7 @@ WHERE ZipCode IS NOT NULL;
           geoJsonUrl="/Cook_County_Zip_Code.geojson"
           geoId=zip
           areaCol=ZIP
-          value=Forclosure2023
+          value=Foreclosure_rate
           title="Housing Scores"
           tooltip={[
             {id: 'Forclosure2023', title:'Foreclosures 2023', fmt: 'id', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
@@ -153,7 +153,9 @@ WHERE ZipCode IS NOT NULL;
           ]}
         />
 
-    ###### Colors represent Foreclosures 2023 values.
+    ###### Colors represent Foreclosures Rate using 2023 foreclosure values.
 
     </Group>
 </Grid>
+
+
