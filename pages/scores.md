@@ -17,7 +17,7 @@ SELECT
   LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, 
   "NeighborhoodScore",
   "Rank"
-FROM zip_scores
+FROM zip_scores_full
 WHERE ZipCode IS NOT NULL;
 ```
 ```sql zipscores_education
@@ -25,7 +25,7 @@ select
   LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, 
   "MedEnrollment", 
   "MedGraduation",
-FROM zip_scores
+FROM zip_scores_full
 WHERE ZipCode IS NOT NULL;
 ```
 ```sql zipscores_crime
@@ -35,7 +35,7 @@ select
   "PropertyCrimes",
   "ViolentCrimes",
   "Other"
-FROM zip_scores
+FROM zip_scores_full
 WHERE ZipCode IS NOT NULL;
 ```
 ```sql zipscores_population_and_income
@@ -47,7 +47,7 @@ select
   "Income_>50K_<100K",
   "Income_>100K",
   "Population",
-FROM zip_scores
+FROM zip_scores_full
 WHERE ZipCode IS NOT NULL;
 ```
 
@@ -56,7 +56,7 @@ select
   LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, 
   "Forclosure2023",
   "Foreclosure_rate",
-FROM zip_scores
+FROM zip_scores_full
 WHERE ZipCode IS NOT NULL;
 ```
 
