@@ -1,3 +1,7 @@
+---
+title: Community Scores
+---
+
 ```sql zipscores_overall
 SELECT 
   LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, 
@@ -76,11 +80,11 @@ WHERE ZipCode IS NOT NULL;
           value=DrugCrimes
           title="Crime Scores"
           tooltip={[
-            {id: 'DrugCrimes', title: 'Drug Crimes', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
-            {id: 'PropertyCrimes', title: 'Property Crimes', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
-            {id: 'PropertyCrimes', title: 'Property Crimes', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
-            {id: 'ViolentCrimes', title: 'Violent Crimes', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
-            {id: 'Other', title: 'Other Crimes', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
+            {id: 'DrugCrimes', title: 'Drug Crimes since 2001', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
+            {id: 'PropertyCrimes', title: 'Property Crimes since 2001', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
+            {id: 'PropertyCrimes', title: 'Property Crimes since 2001', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
+            {id: 'ViolentCrimes', title: 'Violent Crimes since 2001', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
+            {id: 'Other', title: 'Other Crimes since 2001', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
           ]}
         />
 
@@ -135,7 +139,7 @@ WHERE ZipCode IS NOT NULL;
           title="Housing Scores"
           tooltip={[
             {id: 'Forclosure2023', title:'Foreclosures 2023', fmt: 'id', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
-            {id: 'Foreclosure_rate', title:'Foreclosure Rate', fmt: 'id', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
+            {id: 'Foreclosure_rate', title:'Foreclosure Rate per 10,000 People', fmt: 'id', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
           ]}
         />
 

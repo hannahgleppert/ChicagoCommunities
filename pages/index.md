@@ -48,8 +48,8 @@ group by all;
 
 <Details title='About this data'>
 
-    <Details title='Zillow'>
-     Information about Zillow's data.
+    <Details title='Housing'>
+     Information about housing data.
     </Details>
     <Details title='Crime'>
     Information about crime data.

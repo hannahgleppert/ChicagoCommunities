@@ -98,32 +98,3 @@ order by ZIP
     <Column id=schools contentType=colorscale/>
 </DataTable>
 
- ```sql medGraduation
-SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "MedGraduation" AS "Median Graduation Rate of High Schools"
-FROM zip_scores
-WHERE ZipCode IS NOT NULL;
-```
-
-<AreaMap
-   data={medGraduation}
-   geoJsonUrl="/Cook_County_Zip_Code.geojson"
-   geoId=zip
-   areaCol=ZIP
-   value="Median Graduation Rate of High Schools"
-   title="Median Graduation Rate of High Schools"
-/>
-
- ```sql medEnrollment
-SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "MedEnrollment" AS "Median Enrollment in Colleges" 
-FROM zip_scores
-WHERE ZipCode IS NOT NULL;
-```
-
-<AreaMap
-   data={medEnrollment}
-   geoJsonUrl="/Cook_County_Zip_Code.geojson"
-   geoId=zip
-   areaCol=ZIP
-   value="Median Enrollment in Colleges" 
-   title="Median Enrollment in Colleges" 
-/>
