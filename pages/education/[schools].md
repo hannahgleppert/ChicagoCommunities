@@ -26,6 +26,7 @@ WHERE ZIP = '${params.schools}'
             {id: 'Long_Name', showColumnName: false, valueClass: 'font-bold text-lg'},
             {id: 'Primary_Category'},
             {id: 'Grades_Offered_All', showColumnName: true},
+            {id: 'Student_Count_Total', showColumnName: true},
         ]}
     />
 
