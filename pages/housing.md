@@ -2,6 +2,29 @@
 title: Housing
 ---
 
+```sql housing
+select
+  LPAD(CAST("ZIP" AS TEXT), 5, '0') AS ZIP,
+  "COOK_COUNTY_MUNICIPALITY" as city,
+  "Total_Households" as Total_Households
+from
+  housing_stats
+group by all;
+```
+<AreaMap
+  data={housing}
+  geoJsonUrl="/Cook_County_Zip_Code.geojson"
+  geoId=zip
+  areaCol=ZIP
+  value=Total_Households
+  name=map_input
+  title = "Cook County Municipalities"
+  tooltip={[
+    {id: 'ZIP', fmt: 'id', showColumnName: false, valueClass: 'text-xl font-semibold'},
+    {id: 'Total_Households', title: 'Total Households', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
+    ]}
+/>
+
 
 ```sql community_housing
 select
