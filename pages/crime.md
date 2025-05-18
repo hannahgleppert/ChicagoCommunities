@@ -56,8 +56,7 @@ GROUP BY "Primary Type"
         lat='Latitude'
         long='Longitude'
         startingZoom=12
-        name=my_point_map
-        value='Arrest'        
+        name=my_point_map      
         tooltipType=hover
         tooltip={[
             {id: 'Primary Type', showColumnName: false, valueClass: 'font-bold text-lg'},
