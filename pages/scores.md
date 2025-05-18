@@ -171,6 +171,7 @@ WHERE ZipCode IS NOT NULL;
    geoJsonUrl="/Cook_County_Zip_Code.geojson"
    geoId=zip
    areaCol=ZIP
+   title="Median Graduation Rate of High Schools"
    value="Median Graduation Rate of High Schools"
    name="Median Graduation Rate of High Schools"
 />
@@ -186,6 +187,7 @@ WHERE ZipCode IS NOT NULL;
    geoJsonUrl="/Cook_County_Zip_Code.geojson"
    geoId=zip
    areaCol=ZIP
+   title="Median Enrollment in Colleges" 
    value="Median Enrollment in Colleges" 
    name="Median Enrollment in Colleges" 
 />
@@ -203,6 +205,7 @@ WHERE ZipCode IS NOT NULL;
    geoJsonUrl="/Cook_County_Zip_Code.geojson"
    geoId=zip
    areaCol=ZIP
+   title="Income Score"
    value="IncomeScore"
    name=IncomeScore
 />
@@ -218,6 +221,7 @@ WHERE ZipCode IS NOT NULL;
    geoJsonUrl="/Cook_County_Zip_Code.geojson"
    geoId=zip
    areaCol=ZIP
+   title="Foreclosure Rate per 10,000 People"
    value="Foreclosure Rate per 10,000 People"
    name=Foreclosure Rate per 10,000 People
 />
@@ -235,6 +239,7 @@ WHERE ZipCode IS NOT NULL;
    geoJsonUrl="/Cook_County_Zip_Code.geojson"
    geoId=zip
    areaCol=ZIP
+   title="Violent Crimes since 2001"
    value="Violent Crimes since 2001"
    name=violent_crimes
 />
@@ -250,6 +255,7 @@ WHERE ZipCode IS NOT NULL;
    geoJsonUrl="/Cook_County_Zip_Code.geojson"
    geoId=zip
    areaCol=ZIP
+   title="Drug Crimes since 2001"
    value="Drug Crimes since 2001"
    name=drug_crimes
 />
@@ -265,6 +271,7 @@ WHERE ZipCode IS NOT NULL;
    geoJsonUrl="/Cook_County_Zip_Code.geojson"
    geoId=zip
    areaCol=ZIP
+   title="Property Crimes since 2001"
    value="Property Crimes since 2001"
    name=property_crimes
 />
@@ -280,6 +287,7 @@ WHERE ZipCode IS NOT NULL;
    geoJsonUrl="/Cook_County_Zip_Code.geojson"
    geoId=zip
    areaCol=ZIP
+   title="Other Crimes since 2001"
    value="Other Crimes since 2001"
    name=other_crimes
 />
