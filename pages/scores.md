@@ -158,4 +158,128 @@ WHERE ZipCode IS NOT NULL;
     </Group>
 </Grid>
 
+### Education
 
+ ```sql medGraduation
+SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "MedGraduation" AS "Median Graduation Rate of High Schools"
+FROM zip_scores
+WHERE ZipCode IS NOT NULL;
+```
+
+<AreaMap
+   data={medGraduation}
+   geoJsonUrl="/Cook_County_Zip_Code.geojson"
+   geoId=zip
+   areaCol=ZIP
+   value="Median Graduation Rate of High Schools"
+   name="Median Graduation Rate of High Schools"
+/>
+
+ ```sql medEnrollment
+SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "MedEnrollment" AS "Median Enrollment in Colleges" 
+FROM zip_scores
+WHERE ZipCode IS NOT NULL;
+```
+
+<AreaMap
+   data={medEnrollment}
+   geoJsonUrl="/Cook_County_Zip_Code.geojson"
+   geoId=zip
+   areaCol=ZIP
+   value="Median Enrollment in Colleges" 
+   name="Median Enrollment in Colleges" 
+/>
+
+### Housing
+
+```sql incomeScore
+SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "IncomeScore"
+FROM zip_scores
+WHERE ZipCode IS NOT NULL;
+```
+
+<AreaMap
+   data={incomeScore}
+   geoJsonUrl="/Cook_County_Zip_Code.geojson"
+   geoId=zip
+   areaCol=ZIP
+   value="IncomeScore"
+   name=IncomeScore
+/>
+
+ ```sql foreclosureRate
+SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "Foreclosure_rate" AS "Foreclosure Rate per 10,000 People"
+FROM zip_scores
+WHERE ZipCode IS NOT NULL;
+```
+
+<AreaMap
+   data={foreclosureRate}
+   geoJsonUrl="/Cook_County_Zip_Code.geojson"
+   geoId=zip
+   areaCol=ZIP
+   value="Foreclosure Rate per 10,000 People"
+   name=Foreclosure Rate per 10,000 People
+/>
+
+### Crime 
+
+```sql violentCrimes
+SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "ViolentCrimes" AS "Violent Crimes since 2001"
+FROM zip_scores
+WHERE ZipCode IS NOT NULL;
+```
+
+<AreaMap
+   data={violentCrimes}
+   geoJsonUrl="/Cook_County_Zip_Code.geojson"
+   geoId=zip
+   areaCol=ZIP
+   value="Violent Crimes since 2001"
+   name=violent_crimes
+/>
+
+ ```sql drugCrimes
+SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "ViolentCrimes" AS "Drug Crimes since 2001"
+FROM zip_scores
+WHERE ZipCode IS NOT NULL;
+```
+
+<AreaMap
+   data={drugCrimes}
+   geoJsonUrl="/Cook_County_Zip_Code.geojson"
+   geoId=zip
+   areaCol=ZIP
+   value="Drug Crimes since 2001"
+   name=drug_crimes
+/>
+
+ ```sql propertyCrimes
+SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "PropertyCrimes" AS "Property Crimes since 2001"
+FROM zip_scores
+WHERE ZipCode IS NOT NULL;
+```
+
+<AreaMap
+   data={propertyCrimes}
+   geoJsonUrl="/Cook_County_Zip_Code.geojson"
+   geoId=zip
+   areaCol=ZIP
+   value="Property Crimes since 2001"
+   name=property_crimes
+/>
+
+ ```sql otherCrimes
+SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "Other" AS "Other Crimes since 2001"
+FROM zip_scores
+WHERE ZipCode IS NOT NULL;
+```
+
+<AreaMap
+   data={otherCrimes}
+   geoJsonUrl="/Cook_County_Zip_Code.geojson"
+   geoId=zip
+   areaCol=ZIP
+   value="Other Crimes since 2001"
+   name=other_crimes
+/>
