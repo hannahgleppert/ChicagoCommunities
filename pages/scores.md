@@ -71,6 +71,7 @@ WHERE ZipCode IS NOT NULL;
   legendType=scalar
   title="Overall Scores"
   tooltip={[
+            {id: 'ZIP', fmt: 'id', showColumnName: false, valueClass: 'text-xl font-semibold'},
             {id: 'Rank', title: 'Rank', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
             {id: 'NeighborhoodScore', title: 'Community Scores', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
             ]}
@@ -90,6 +91,7 @@ WHERE ZipCode IS NOT NULL;
           value=ViolentCrimes
           title="Crime Scores"
           tooltip={[
+            {id: 'ZIP', fmt: 'id', showColumnName: false, valueClass: 'text-xl font-semibold'},
             {id: 'DrugCrimes', title: 'Drug Crimes since 2001', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
             {id: 'PropertyCrimes', title: 'Property Crimes since 2001', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
             {id: 'PropertyCrimes', title: 'Property Crimes since 2001', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
@@ -110,6 +112,7 @@ WHERE ZipCode IS NOT NULL;
           value=MedEnrollment
           title="Education Scores"
           tooltip={[
+            {id: 'ZIP', fmt: 'id', showColumnName: false, valueClass: 'text-xl font-semibold'},
             {id: 'MedEnrollment', title: 'Median Enrollment in Colleges', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
             {id: 'MedGraduation', title: 'Median Graduation Rate of High Schools', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
           ]}
@@ -127,6 +130,7 @@ WHERE ZipCode IS NOT NULL;
           value=IncomeScore
           title="Income and Population Scores"
           tooltip={[
+            {id: 'ZIP', fmt: 'id', showColumnName: false, valueClass: 'text-xl font-semibold'},
             {id: 'IncomeScore', title:'Income Score', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
             {id: 'Income_<25k', title:'Income Less than 25K', fmt: 'pct', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
             {id: 'Income_>25K_<50K', title:'Income between 25K and 50K', fmt: 'pct', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
@@ -148,6 +152,7 @@ WHERE ZipCode IS NOT NULL;
           value=Foreclosure_rate
           title="Housing Scores"
           tooltip={[
+            {id: 'ZIP', fmt: 'id', showColumnName: false, valueClass: 'text-xl font-semibold'},
             {id: 'Forclosure2023', title:'Foreclosures 2023', fmt: 'id', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
             {id: 'Foreclosure_rate', title:'Foreclosure Rate per 10,000 People', fmt: 'id', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
           ]}
