@@ -131,7 +131,7 @@ WHERE ZipCode IS NOT NULL;
             {id: 'Income_<25k', title:'Income Less than 25K', fmt: 'pct', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
             {id: 'Income_>25K_<50K', title:'Income between 25K and 50K', fmt: 'pct', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
             {id: 'Income_>50K_<100K', title:'Income between 50K and 100K', fmt: 'pct', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
-            {id: 'Income_greater_than_100K', title:'Income greater than 100K', fmt: 'ct', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
+            {id: 'Income_>100K', title:'Income greater than 100K', fmt: 'ct', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
             {id: 'Population', title:'Population', fieldClass: 'text-[grey]', valueClass: 'text-gray-500'},
           ]}
         />
@@ -162,7 +162,7 @@ WHERE ZipCode IS NOT NULL;
 
  ```sql medGraduation
 SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "MedGraduation" AS "Median Graduation Rate of High Schools"
-FROM zip_scores
+FROM zip_scores_full
 WHERE ZipCode IS NOT NULL;
 ```
 
@@ -178,7 +178,7 @@ WHERE ZipCode IS NOT NULL;
 
  ```sql medEnrollment
 SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "MedEnrollment" AS "Median Enrollment in Colleges" 
-FROM zip_scores
+FROM zip_scores_full
 WHERE ZipCode IS NOT NULL;
 ```
 
@@ -192,11 +192,11 @@ WHERE ZipCode IS NOT NULL;
    name="Median Enrollment in Colleges" 
 />
 
-### Housing
+### Income and Housing
 
 ```sql incomeScore
 SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "IncomeScore"
-FROM zip_scores
+FROM zip_scores_full
 WHERE ZipCode IS NOT NULL;
 ```
 
@@ -212,7 +212,7 @@ WHERE ZipCode IS NOT NULL;
 
  ```sql foreclosureRate
 SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "Foreclosure_rate" AS "Foreclosure Rate per 10,000 People"
-FROM zip_scores
+FROM zip_scores_full
 WHERE ZipCode IS NOT NULL;
 ```
 
@@ -226,11 +226,28 @@ WHERE ZipCode IS NOT NULL;
    name=Foreclosure Rate per 10,000 People
 />
 
+ ```sql foreclosure2023
+SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "Forclosure2023" AS "Foreclosure_2023"
+FROM zip_scores_full
+WHERE ZipCode IS NOT NULL;
+```
+
+<AreaMap
+   data={foreclosure2023}
+   geoJsonUrl="/Cook_County_Zip_Code.geojson"
+   geoId=zip
+   areaCol=ZIP
+   title="Foreclosures in 2023"
+   value="Foreclosure_2023"
+   name=Foreclosure_2023
+/>
+
+
 ### Crime 
 
 ```sql violentCrimes
 SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "ViolentCrimes" AS "Violent Crimes since 2001"
-FROM zip_scores
+FROM zip_scores_full
 WHERE ZipCode IS NOT NULL;
 ```
 
@@ -246,7 +263,7 @@ WHERE ZipCode IS NOT NULL;
 
  ```sql drugCrimes
 SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "ViolentCrimes" AS "Drug Crimes since 2001"
-FROM zip_scores
+FROM zip_scores_full
 WHERE ZipCode IS NOT NULL;
 ```
 
@@ -262,7 +279,7 @@ WHERE ZipCode IS NOT NULL;
 
  ```sql propertyCrimes
 SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "PropertyCrimes" AS "Property Crimes since 2001"
-FROM zip_scores
+FROM zip_scores_full
 WHERE ZipCode IS NOT NULL;
 ```
 
@@ -278,7 +295,7 @@ WHERE ZipCode IS NOT NULL;
 
  ```sql otherCrimes
 SELECT LPAD(CAST("ZipCode" AS TEXT), 5, '0') AS ZIP, "Other" AS "Other Crimes since 2001"
-FROM zip_scores
+FROM zip_scores_full
 WHERE ZipCode IS NOT NULL;
 ```
 
